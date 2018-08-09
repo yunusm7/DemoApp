@@ -7,7 +7,6 @@ target 'DemoTest' do
 
   # Pods for DemoTest
 
-  pod 'Alamofire'
   pod 'RappleProgressHUD'
   pod 'SDWebImage', '~> 4.0'
 

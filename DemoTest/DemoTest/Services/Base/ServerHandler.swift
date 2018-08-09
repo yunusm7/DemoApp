@@ -8,7 +8,6 @@
 
 import UIKit
 import SystemConfiguration
-import Alamofire
 
 /*
  - Network Activity
@@ -44,41 +43,64 @@ class ServerHandler: NSObject {
     }
     
     class func sendGetRequest(functionName : String, showLoader: Bool,  completionHandler:@escaping ((_ responseValue: Any?, _ error: Error?) -> Void)) -> Void {
-        // Check Network Availability
+        /// Check Network Availability
+        
         if isNetWorkAvailable() == true {
-            // Show the Activity
+            // Show Activity
             if showLoader {
                 DispatchQueue.main.async(execute: {
                     ActivityIndicatorView.showActivity()
                 })
             }
-            let url = functionName
-            print("Request Url: \(url)")
-            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseString(completionHandler: { (response) in
+            
+            /// Set up the URL request
+            guard let url = URL(string: functionName) else {
+                print("Error: cannot create URL")
+                return
+            }
+            let urlRequest = URLRequest(url: url)
+            
+            /// set up the session
+            let config = URLSessionConfiguration.default
+            let session = URLSession(configuration: config)
+            
+            /// make the request
+            let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
                 
-                // Hide the Activity
+                /// Hide Activity
                 if showLoader {
                     DispatchQueue.main.async(execute: {
                         ActivityIndicatorView.hideActivity()
                     })
                 }
-                switch(response.result) {
-                case .success(_):
-                    if response.result.isSuccess {
-                        let result = response.result.value
-                        print("Response: \(result!)")
-                        completionHandler(result, nil)
-                    }
-                    break
-                    
-                case .failure(_):
-                    if response.result.isFailure {
-                        let error = response.result.error!
-                        completionHandler(nil, error)
-                    }
-                    break
+                
+                /*
+                 Check the server data and error if we get error result equal to nil
+                 then we immediate return the function
+                 */
+                guard let data = data, error == nil else {
+                    return
+                }
+                let httpStatus = response as? HTTPURLResponse
+                
+                /*
+                 Check server response status code
+                 
+                 - Success: If we get status code equal to 200 it means we get success response
+                 and return success result to the function.
+                 - Failure: If we get status code not equal to 200 then return the error message  to the function
+                 
+                 */
+                if httpStatus?.statusCode == 200 {
+                    /// Convert first data to UTF8 encoding
+                    let utfStringData = String(data: data, encoding: String.Encoding.ascii)
+                    completionHandler(utfStringData, nil)
+                } else {
+                    completionHandler(nil, error)
                 }
             })
+            task.resume()
+            
         } else {
             AlertView.showAlert(title: Messages.Network.title, message: Messages.Network.message, cancelBtnTitle: "OK")
         }
