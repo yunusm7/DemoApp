@@ -23,7 +23,14 @@ class AboutNewsFeedViewModel {
                 // self.aboutCountryDatas = result
                 //print(result)
                 let response = self.convertToDictionary(text: result as! String)
-                
+                if let responseData = response!["results"], responseData is [[String: Any]]{
+                    let responseDictionary = responseData as! [[String : Any]]
+                    for newsFeed in responseDictionary {
+                        if let news = NewsFeed(data: newsFeed) {
+                            self.aboutNewsDatas.append(news)
+                        }
+                    }
+                }
             } else {
                 print(error ?? "")
                 AlertView.showAlert(title: "Alert!", message: "Can't load items", cancelBtnTitle: "OK")
