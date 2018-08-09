@@ -18,6 +18,13 @@
 		B1D3936B211C2E8200EC479B /* AboutNewsFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3936A211C2E8200EC479B /* AboutNewsFeedCollectionViewCell.swift */; };
 		B1D3936F211C2F5D00EC479B /* AboutNewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3936E211C2F5D00EC479B /* AboutNewsFeedViewController.swift */; };
 		B1D39373211C2FB500EC479B /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D39372211C2FB500EC479B /* NewsFeed.swift */; };
+		B1D39379211C302600EC479B /* ServerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D39378211C302600EC479B /* ServerHandler.swift */; };
+		B1D3937B211C305400EC479B /* APIPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3937A211C305400EC479B /* APIPaths.swift */; };
+		B1D39383211C309D00EC479B /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D39382211C309D00EC479B /* ActivityIndicatorView.swift */; };
+		B1D39385211C30C100EC479B /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D39384211C30C100EC479B /* AlertView.swift */; };
+		B1D39387211C30EF00EC479B /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D39386211C30EF00EC479B /* Messages.swift */; };
+		B1D3938B211C328800EC479B /* AboutNewsFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3938A211C328800EC479B /* AboutNewsFeedViewModel.swift */; };
+		B1D3938F211C336300EC479B /* demoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3938E211C336300EC479B /* demoCell.swift */; };
 		C1437E6F224483D8C2C571C1 /* Pods_DemoTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF52FCB95F23A429AC1244C /* Pods_DemoTestTests.framework */; };
 		FF7D8464630095E3BA1BFE21 /* Pods_DemoTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0635ACAAE99663A80A247E34 /* Pods_DemoTestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +69,13 @@
 		B1D3936A211C2E8200EC479B /* AboutNewsFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNewsFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1D3936E211C2F5D00EC479B /* AboutNewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNewsFeedViewController.swift; sourceTree = "<group>"; };
 		B1D39372211C2FB500EC479B /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
+		B1D39378211C302600EC479B /* ServerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerHandler.swift; sourceTree = "<group>"; };
+		B1D3937A211C305400EC479B /* APIPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPaths.swift; sourceTree = "<group>"; };
+		B1D39382211C309D00EC479B /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		B1D39384211C30C100EC479B /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		B1D39386211C30EF00EC479B /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		B1D3938A211C328800EC479B /* AboutNewsFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNewsFeedViewModel.swift; sourceTree = "<group>"; };
+		B1D3938E211C336300EC479B /* demoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoCell.swift; sourceTree = "<group>"; };
 		B68608DBB7603B616EBE9545 /* Pods-DemoTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoTestUITests/Pods-DemoTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DA86E7060971D94BAB6B8CAB /* Pods-DemoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoTest/Pods-DemoTest.release.xcconfig"; sourceTree = "<group>"; };
 		EB9F29EAF22E5C584610E814 /* Pods-DemoTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DemoTestTests/Pods-DemoTestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +202,8 @@
 		B1D39360211C2E4000EC479B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				B1D39378211C302600EC479B /* ServerHandler.swift */,
+				B1D3937A211C305400EC479B /* APIPaths.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -195,6 +211,7 @@
 		B1D39361211C2E4000EC479B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B1D3938A211C328800EC479B /* AboutNewsFeedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -211,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				B1D39364211C2E4000EC479B /* CollectionView Cell */,
+				B1D3938E211C336300EC479B /* demoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +252,9 @@
 		B1D39367211C2E4100EC479B /* UtilityFiles */ = {
 			isa = PBXGroup;
 			children = (
+				B1D39382211C309D00EC479B /* ActivityIndicatorView.swift */,
+				B1D39384211C30C100EC479B /* AlertView.swift */,
+				B1D39386211C30EF00EC479B /* Messages.swift */,
 			);
 			path = UtilityFiles;
 			sourceTree = "<group>";
@@ -402,11 +423,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DemoTest/Pods-DemoTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RappleProgressHUD/RappleProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RappleProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
@@ -460,8 +483,15 @@
 			files = (
 				B1D39373211C2FB500EC479B /* NewsFeed.swift in Sources */,
 				B1D3936F211C2F5D00EC479B /* AboutNewsFeedViewController.swift in Sources */,
+				B1D3938B211C328800EC479B /* AboutNewsFeedViewModel.swift in Sources */,
+				B1D39385211C30C100EC479B /* AlertView.swift in Sources */,
 				B1D39334211C29DF00EC479B /* ViewController.swift in Sources */,
+				B1D3937B211C305400EC479B /* APIPaths.swift in Sources */,
+				B1D39383211C309D00EC479B /* ActivityIndicatorView.swift in Sources */,
+				B1D39387211C30EF00EC479B /* Messages.swift in Sources */,
+				B1D39379211C302600EC479B /* ServerHandler.swift in Sources */,
 				B1D39332211C29DF00EC479B /* AppDelegate.swift in Sources */,
+				B1D3938F211C336300EC479B /* demoCell.swift in Sources */,
 				B1D3936B211C2E8200EC479B /* AboutNewsFeedCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
