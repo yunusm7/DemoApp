@@ -21,6 +21,7 @@ class demoCell: UITableViewCell {
     
     func configure(aboutFeed: NewsFeed) {
         
+        // configure the rows data
         aboutNewsFeedTitleLabel.text = aboutFeed.title
         byLineLabel.text = aboutFeed.byline
         dateLabel.text = aboutFeed.publishedDate

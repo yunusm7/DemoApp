@@ -8,6 +8,11 @@
 
 import UIKit
 
+/**
+ ViewController for Showing AboutNews Data
+ 
+ */
+
 class AboutNewsFeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -66,7 +71,7 @@ class AboutNewsFeedViewController: UIViewController {
     
 }
 
-//MARK: Data Source
+//MARK: UitableView Data Source and Delegate
 extension AboutNewsFeedViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -82,6 +87,8 @@ extension AboutNewsFeedViewController : UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "demoCell") as! demoCell
         
         let item = aboutNewsFeedViewModel.getNewsFeedRecord(indexPath: indexPath)
+        
+        // Set cell contents
         cell.configure(aboutFeed: item)
         
         return cell

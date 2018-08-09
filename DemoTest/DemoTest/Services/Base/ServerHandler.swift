@@ -10,9 +10,15 @@ import UIKit
 import SystemConfiguration
 import Alamofire
 
+/*
+ - Network Activity
+ - Fetch server data
+ 
+ */
+
 class ServerHandler: NSObject {
     
-    // Network Activity
+    /// Network Activity for checking the network in device
     class func isNetWorkAvailable() -> Bool {
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
